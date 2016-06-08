@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>House of Mirrors</title>
+	<link href='https://fonts.googleapis.com/css?family=Oswald|Raleway' rel='stylesheet' type='text/css'>
+	<style>
+
+	html{
+		background-image: url('https://2cdd50bf346e4cbc2488b9b33f1ffaf59c759a10.googledrive.com/host/0ByYs6KBK6sNBdG5hT0N1dUwtOWM');
+		background-attachment: fixed;
+		background-position: center;
+		background-size: auto 100%;
+		width: 100%;
+		height: 100%;
+		-webkit-user-select: none;
+		cursor: none;
+	}
+
+	body{
+		padding: 15px 50px;
+		width: 1000px;
+		height: 600px;
+		margin: auto;
+	}
+
+	div.hexfield{
+		float: left;
+		width: 400px;
+		height: 461.88px;
+		margin: 15px 50px;
+	}
+
+	div.hex:before{
+		width: 0;
+		height: 0;
+		border-bottom: 115.47px solid rgba(26,26,26,0.75);
+		border-left: 200px solid transparent;
+		border-right: 200px solid transparent;
+		position: absolute;
+		top: -115.47px;
+		left: 0;
+		content: "";
+	}
+
+	div.hex{
+		width: 400px;
+		height: 230.94px;
+		background-color: rgba(26,26,26,0.75);
+		position: relative;
+		margin-top: 115.4px;
+		line-height: 230.94px;
+		color: white;
+		text-align: center;
+		font-family: 'Oswald', sans-serif;
+		font-size: 50px;
+		transition: 1s ease;
+	}
+
+	div.hex:after{
+		width: 0;
+		height: 0;
+		border-top: 115.47px solid rgba(26,26,26,0.75);
+		border-left: 200px solid transparent;
+		border-right: 200px solid transparent;
+		position: absolute;
+		bottom: -115.17px;
+		left: 0;
+		content: "";
+	}
+
+	div.footer{
+		width: 100%;
+		height: 100px;
+		line-height: 100px;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		text-align: center;
+		background-color: rgba(26,26,26,0.75);
+		color: white;
+		font-family: 'Raleway', sans-serif;
+		font-size: 40px;
+		transition: 0.5s;
+	}
+
+	div.footer:hover{
+		background-color: rgba(18,72,137,0.25);
+		height: 60px;
+		line-height: 60px;
+	}
+
+	</style>
+</head>
+
+<body>
+
+	<div class="hexfield"><div></div>
+	<div class="hex" id="demo">Audience</div>
+	<div></div></div>
+
+	<div class="hexfield"><div></div>
+	<div class="hex" id="purp">Purpose</div>
+	<div></div></div>
+
+	<div class="footer" onmouseover="pull();" onmouseout="push();" onclick="reflect();" accesskey="k">
+		House of Mirrors Generator
+	</div>
+
+	<script>
+
+	function pull(){
+		document.getElementById('demo').style.height="0";
+		document.getElementById('purp').style.height="0";
+
+		document.getElementById('demo').innerHTML="";
+		document.getElementById('purp').innerHTML="";
+	}
+
+	function push(){
+		document.getElementById('demo').style.height="230.94px";
+		document.getElementById('purp').style.height="230.94px";
+
+		
+		setTimeout(reflect, 1015);
+	}
+
+	function reflect(){
+		var demo = ["Sophomores","Juniors","Seniors","Faculty","Parents","Alumni","Administration"]
+		var purp = ["Email","Facebook","Webpage","Speech","Blog","Conversation"]
+
+		var demokey = Math.floor((Math.random()*demo.length));
+		var demoblock = document.getElementById('demo');
+		demoblock.innerHTML=demo[demokey];
+
+		var purpkey = Math.floor((Math.random()*purp.length));
+		var purpblock = document.getElementById('purp');
+		purpblock.innerHTML=purp[purpkey];
+	}
+
+
+	</script>
+
+</body>
+
+</html>
